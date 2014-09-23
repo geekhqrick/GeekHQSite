@@ -1,0 +1,157 @@
+<div id="z_top" class="zone">
+  <div class="cnt">
+    <a name="top" class="waypt"></a>
+    <h2>Home</h2>
+    <h1>Top Quality, Low Cost Software Engineering</h1>
+    <h3>Ruby on rails &nbsp;&ndash;&nbsp; Responsive Design for Tablets and Mobile &nbsp;&ndash;&nbsp; WordPress</h3>
+    <ul>
+      <li class="rails">
+        <h4>Ruby on Rails</h4>
+        <ul>
+          <li>The most common open source platform for web applications.</li>
+          <li>Ships quickly at minimal cost.</li>
+          <li>Huge library of turnkey solutions to complex problems.</li>
+        </ul>
+      </li>
+      <li class="resp">
+        <h4>Responsive Web</h4>
+        <ul>
+          <li>Web, tablet, and phone in one application.</li>
+          <li>Serve the screens your customers use.</li>
+          <li>React appropriately to touch screens.</li>
+        </ul>
+      </li>
+    </ul>
+    <p>
+      We provide an ideal cluster of senior software engineers to supply contract engineering to startups and technology companies.
+    </p>
+    <p>
+      <a class="btn" href="#contact">Tell Us What You Need</a><br/>
+      and we'll get it done.
+    </p>
+  </div>
+</div>
+
+<div id="z_about" class="zone">
+  <div class="cnt">
+    <a name="about" class="waypt"></a>
+    <h2>How We Work</h2>
+    <p>
+      GeekHQ works with startups and other technology companies to build their web-based product or website.
+      We are cost effective and deliver significant progress each month.  This is a perfect combination when
+      you need to see results fast, and on a budget.
+    </p>
+    <p>
+      We deliver an <em>Instant Engineering Team</em> on a <em>PAY-PER-MONTH</em> basis.  You can hire us
+      for 2, 3, or however many months you need.  Pay only what you need, and the pressure is on us to keep
+      you happy every single month.
+    </p>
+    <h3>Get Your Instant Engineering Team</h3>
+    <ul>
+      <li class="hoe">
+        <h4>GeekHQ "Head of Engineering"</h4>
+        <ul>
+          <li>Runs the engineering team we bring to you, maximizing each month's deliveries.</li>
+          <li>
+            Has years of experience working at startups and large corporations.
+            You not only acquire engineers, you acquire an understanding of your pain points.
+          </li>
+          <li>
+            Talks in high-level terms about your business needs, then converts that to engineering plans.
+            Does not simply fulfil a spec.
+          </li>
+          <li>
+            A resource that typically costs $180K to $220K per year.
+            Since we time slice the "head of engineering" we can bring you that expertise at a lower cost.
+          </li>
+        </ul>
+      </li>
+      <li class="engs">
+        <h4>2 Full Time Full-Stack Engineers</h4>
+        <ul>
+          <li>Senior Ruby-on-Rails Software Engineers with 2+ years of experience in that role.</li>
+          <li>
+            Build everything you need to make your entire web-based product, from scratch if necessary.
+            Can deliver products aimed at all screens, including responsive design for phone and table consumption.
+          </li>
+          <li>
+            <em>YOUR</em> engineers, working all day, every day, all month - and dedicated <em>ONLY</em> to <em>YOUR</em> company.
+            With no distractions, they are focused on delivering an incredible quantity of work for you each and every month.
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <p>
+      Products take time to build by a single engineer, no matter how skilled.
+      A GeekHQ team swiftly builds out what you need and projects can go live in far less time.
+    </p>
+  </div>
+</div>
+
+<div id="z_meet" class="zone">
+  <div class="cnt">
+    <a name="meet" class="waypt"></a>
+    <h2>Meet the Geeks</h2>
+    <ul><li class="bryan w_sel">
+        <span class="slidr"><i>&#9658;</i><u>&#9660;</u></span>
+        <h4>
+          Bryan Starbuck
+          <%= link_to ' ', 'http://www.linkedin.com/in/bryanstarbuck', class:'linkedin', target:'_blank' %>
+        </h4>
+        <p>
+          Former CEO and founder of TalentSpring, Inc. until its acquisition in 2010. Former VP of Product
+          Management at Talent Technologies.
+        </p>
+        <p>
+          My passion is creating a vision to bring significant change to a big market, and then building out
+          the team to turn the vision into a profitable company. I value getting an innovative strategic advantage,
+          and then focusing on execution and operational execution to build a disciplined company.
+        </p>
+        <p>
+          Specialties: Leadership, Marketing in internet companies, Ruby on rails, Product Management, SaaS,
+          building/growing software companies, engineering, product UI design, machine learning, data mining,
+          semantic search, online marketing, branding, enterprise sales, web services, entrepreneurship,
+          recruiting industry.
+        </p>
+      </li><li class="rick">
+        <span class="slidr"><i>&#9668;</i><u>&#9650;</u></span>
+        <h4>
+          Rick Lamoreaux
+          <%= link_to ' ', 'http://www.linkedin.com/pub/rick-lamoreaux/11/25b/891/', class:'linkedin', target:'_blank' %>
+        </h4>
+        <p>
+          Formerly VP Engineering at LetsPour.com.  Former architect and team lead of Network Automation product
+          at Hewlett-Packard.
+        </p>
+        <p>
+          My passion is to take a vision and bring it to market. I love the challenges of software engineering from
+          perfecting the smallest algorithms to big-picture design. I specialize in solving difficult problems
+          and building architectures that can get core functionality out quickly but have plenty of room for growth
+          and enhancement.
+        </p>
+        <p>
+          Specialties: Software development, Ruby on Rails, software architecture, product management,
+          web services, SaaS, project leadership, project management, entrepreneurship.
+        </p>
+    </li></ul>
+  </div>
+</div>
+
+<div id="z_contact" class="zone">
+  <div class="cnt">
+    <a name="contact" class="waypt"></a>
+    <h2>Contact Us</h2>
+    <%= form_tag( 'mailto:rick@geekhq.co' ) do %>
+      <p>Name</p>
+      <%= text_field_tag :name, '', :placeholder => 'New Client' %>
+      <p>Email</p>
+      <%= text_field_tag :email, '', :placeholder => 'you@example.com' %>
+      <p>Phone/Skype: <em>optional</em></p>
+      <%= text_field_tag :phone, '', :placeholder => '555-123-4567 / sample_skype' %>
+      <p>How Can We Help? <em>optional</em></p>
+      <%= text_area_tag :details, '', :placeholder => 'Tell us what you need...' %>
+      <br/>
+      <%= submit_tag 'Send' %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,249 @@
+// media
+$break-web: 1000px;
+$half-break-web: 500px;
+$break-tablet: 768px;
+$break-phone: 480px;
+$phone-min: 320px;
+
+@mixin respond-to($media) {
+  @if $media == over-width {
+    @media only screen and (min-width: $break-web + 1) { @content; }
+  }
+  @else if $media == web {
+    @media only screen and (min-width: $break-tablet + 1) and (max-width: $break-web) { @content; }
+  }
+  @else if $media == tablet {
+    @media only screen and (min-width: $break-phone + 1) and (max-width: $break-tablet) { @content; }
+  }
+  @else if $media == phone {
+    @media only screen and (max-width: $break-phone) { @content; }
+  }
+}
+
+// colors and fonts
+$background: white;
+$foreground: #222222;
+$border-color: #aaaaaa;
+$shadow-color: rgba(60,60,60,0.5);
+$link-color: #3031d6;
+$warning-color: #dd0505;
+$standard-fonts: Verdana,Arial,Helvetica,sans-serif;
+$highlight-fonts: Verdana,Arial,Helvetica,sans-serif;
+$logo-fonts: 'Raleway',Arial,Helvetica,sans-serif;
+$logo-geek-color: #BF0101;
+$logo-hq-color: #6B6A6A;
+$accent-color: #F76D19;
+$subheader-color: #DA8043;
+
+body {
+  margin: 0; padding: 0;
+  color: $foreground;
+  background: $background image-url('saturn-v.jpg') no-repeat center center;
+  background-size: auto 100%;
+  font-family:$standard-fonts;
+  font-size: 13px;
+  line-height: 16px;
+  min-width: $phone-min;
+}
+a { text-decoration: none; color: $link-color; }
+a:visited { color: darken($link-color, 15%); }
+a:hover { text-decoration: underline; }
+.touch a { text-decoration: underline; }
+p { text-align: justify; }
+/* size-specific text */
+i { font-style: normal; }
+u { text-decoration: none; display: none; }
+@include respond-to(tablet) { i { display: none; } u { display: inline; } }
+@include respond-to(phone) { i { display: none; } u { display: inline; } }
+
+.cnt {
+  width: calc(100% - 10px);
+  padding: 0 5px;
+  @include respond-to(over-width) {
+    max-width: $break-web;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
+}
+
+.hdr {
+  background-color: rgba(255,255,255,0.95);
+  border-bottom: solid 1px $foreground;
+  height: 75px;
+  position: fixed;
+  top: 0; left: 0; width: 100%; padding: 15px 0;
+  transition: all 0.5s;
+  z-index: 1000;
+
+  .cnt { position: relative; }
+
+  .hdr_logo {
+    font-family: $logo-fonts;
+    font-weight: 800;
+    font-size: 65px; line-height:75px;
+    color: $logo-geek-color;
+    padding-left: 100px;
+    background: transparent image-url('geek_hq_logo.png') no-repeat;
+    transition: all 0.5s;
+
+    em { color: $logo-hq-color; font-style: normal; }
+  }
+
+  ul {
+    position: absolute;
+    bottom: 0; right: 0;
+    list-style-type: none;
+  }
+  ul#mmenu {
+    margin: 0; padding: 0;
+    font-size: 15px;
+    font-weight: bold;
+    transition: all 0.5s;
+
+    li {
+      display: inline-block;
+      margin: 0 0 0 15px; padding: 0;
+
+      a {
+        color: lighten($foreground, 25%);
+        padding: 8px 15px;
+        border: solid 1px $foreground;
+        transition: all 0.25s;
+      }
+      a:hover {
+        text-decoration: none;
+        background-color: #eeeeee; color: $foreground;
+      }
+    }
+    li.w_sel {
+      a, a:hover {
+        background: $accent-color; color: white; border-color: $accent-color;
+        transition: all 0.25s;
+      }
+    }
+    li.w_zone {
+      a { background: lighten($accent-color, 10%); color: white; border-color: $accent-color; }
+      a:hover { background: $accent-color; color: white; border-color: $accent-color; }
+    }
+    li.m_top { opacity: 0; transition: all 0.5s; }
+    li.m_top.w_scrl { opacity: 1; transition: all 0.5s; }
+  }
+  ul#mbut {
+    display: none;
+    bottom: -20px; right: 15px;
+    border: solid 1px $foreground;
+    width: 40px;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.5s;
+
+    li {
+      padding: 0;
+      height: 7px;
+      margin: 0 0 4px;
+      border-radius: 4px;
+      background: $foreground;
+    }
+    li:last-child { margin-bottom: 0; }
+  }
+  ul#mbut:hover, ul#mbut.w_sel {
+    border-color: $accent-color;
+    background-color: $accent-color;
+
+    li { background-color: white; }
+  }
+  @include respond-to(tablet) {
+    ul#mmenu { display:none; }
+    ul#mbut { display: block; }
+  }
+  @include respond-to(phone) {
+    height: 45px;
+    padding: 5px 0;
+
+    .hdr_logo {
+      font-size: 40px; line-height:45px;
+      padding-left: 65px;
+      background-size: auto 45px;
+      transition: all 0.5s;
+    }
+
+    ul#mmenu { display: none; }
+    ul#mbut {
+      display: block;
+      bottom: -12px; right: 5px; width: 30px; padding: 4px 3px;
+
+      li { height: 6px; margin-bottom: 3px; border-radius: 3px; }
+      li:last-child { margin-bottom: 0; }
+    }
+  }
+}
+.w_scrl .hdr {
+  height: 45px;
+  transition: all 0.5s;
+
+  .hdr_logo {
+    font-size: 40px; line-height:45px;
+    padding-left: 65px;
+    background-size: auto 45px;
+    transition: all 0.5s;
+  }
+
+  ul#mmenu {
+    bottom:5px;
+    font-size: 12px;
+    transition: all 0.5s;
+
+    li {
+      a { padding: 5px 10px; }
+    }
+  }
+  ul#mbut {
+    bottom: -12px; width: 30px; padding: 4px 3px;
+    transition: all 0.5s;
+
+    li { height: 6px; margin-bottom: 3px; border-radius: 3px; }
+    li:last-child { margin-bottom: 0; }
+  }
+  @include respond-to(phone) {
+    height: 30px;
+    padding: 3px 0;
+
+    .hdr_logo {
+      font-size: 26px; line-height:30px;
+      padding-left: 45px;
+      background-size: auto 30px;
+      transition: all 0.5s;
+    }
+
+    ul#mmenu { display:none; }
+    ul#mbut {
+      display: block;
+      bottom: -13px; width: 23px; padding: 3px;
+
+      li { height: 4px; margin-bottom: 2px; border-radius: 2px; }
+      li:last-child { margin-bottom: 0; }
+    }
+  }
+}
+
+a.waypt {
+  display: block; height: 70px;
+  @include respond-to(phone) { height: 35px; }
+}
+a[name=top] {
+  height: 110px; transition: all 0.5s;
+  @include respond-to(phone) { height: 55px; }
+}
+.w_scrl a[name=top] { transition: all 0.5s; }
+
+.ftr {
+  padding: 15px 0 245px;
+  background-color: black;
+  color: #aaaaaa;
+
+  p { text-align: center; }
+  a, a:visited { color: lighten($link-color, 25%); }
+}
+
+@import "home";
