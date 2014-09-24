@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="4216498238">
+    <data-source source="LOCAL" name="Rails GeekHQSite: development" uuid="5beafb65-735c-43fb-8833-8ac4d1f3102b">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:GeekHQSite_development</jdbc-url>
+      <user-name>geekhq</user-name>
+      <user-password>dfe6dfcfdfdedfd9dff9dfdedfcbdfd8dfdedfeddfcfdfcfdfc1dfe2dffb</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails GeekHQSite: test" uuid="70b1c605-69e7-437c-b98b-fe766ff161e1">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:GeekHQ_test</jdbc-url>
+      <user-name>geekhq</user-name>
+      <user-password>dfe6dfcfdfdedfd9dff9dfdedfcbdfd8dfdedfeddfcfdfcfdfc1dfe2dffb</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails GeekHQSite: production" uuid="87225df3-b679-4db5-afbe-7fa94fcb93ca">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:GeekHQ_production</jdbc-url>
+      <user-name>geekhq</user-name>
+      <user-password>dfe6dfcfdfdedfd9dff9dfdedfcbdfd8dfdedfeddfcfdfcfdfc1dfe2dffb</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
